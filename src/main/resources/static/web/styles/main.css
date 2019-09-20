@@ -1,0 +1,60 @@
+body{
+	background-image: url(battleship.gif);
+	background-repeat: no-repeat;
+	background-size: cover;
+	font-family: 'Press Start 2P', cursive;
+	color: gold;
+	
+}
+
+.title{
+	text-align: center;
+	-webkit-text-fill-color: gold; 
+  	-webkit-text-stroke-width: 1px;
+  	-webkit-text-stroke-color: black;
+  	font-size: 2.3em;
+}
+
+#salvo {
+    text-align: center;
+    margin-top: 7%;
+}
+
+#singup-form, #login-form {
+    margin-top: 5%;
+    text-align: center;
+}
+
+.flex-container{
+	height: 85vh;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-around;
+	align-content: space-around;
+	font-size: 0.9em
+}
+
+.flex-container table{
+	border-spacing: 0;
+	border-collapse: collapse;
+	
+
+}
+.flex-container table tr{
+	border: 2px solid rgb(128,128,128);
+}
+
+.flex-container table thead tr{
+	background: rgb(128,128,128);
+}
+
+.flex-container table tbody tr:hover{
+	background: gold;
+	color: black;
+}
+
+
+.flex-container table th, .flex-container table td{
+	padding: .7em 1em;
+	text-align: center;
+}

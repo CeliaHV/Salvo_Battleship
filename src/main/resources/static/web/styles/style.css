@@ -1,0 +1,220 @@
+
+.grid-stack-item-content {
+    background-repeat: no-repeat;
+    
+    cursor: -webkit-grab;
+    cursor: -moz-grab;
+}
+
+.carrierHorizontal{
+    background-image: url('ships/carrier.png');
+    background-size: 85% 100%;
+    background-position: center;
+}
+
+.carrierVertical{
+    background-image: url('ships/carrier_vertical.png');
+    background-size: 100% 85%;
+    background-position: center;
+    width: 45px !important;
+}
+
+.battleshipHorizontal{
+    background-image: url('ships/battleship.png');
+    background-size: 85% 100%;
+    background-position: center;
+}
+
+.battleshipVertical{
+    background-image: url('ships/battleship_vertical.png');
+    background-size: 100% 85%;
+    background-position: center;
+    width: 45px !important;
+}
+
+.submarineHorizontal{
+    background-image: url('ships/submarine.png');
+    background-size: 90% 100%;
+    background-position: center;
+}
+
+.submarineVertical{
+    background-image: url('ships/submarine_vertical.png');
+    background-size: 100% 90%;
+    background-position: center;
+    width: 45px !important;
+}
+
+.destroyerHorizontal{
+    background-image: url('ships/destroyer.png');
+    background-size: 100% 150%;
+    background-position: center;
+}
+
+.destroyerVertical{
+    background-image: url('ships/destroyer_vertical.png');
+    background-size: 150% 100%;
+    background-position: center;
+    width: 45px !important;
+}
+
+.patrol_boatHorizontal{
+    background-image: url('ships/patrol_boat.png');
+    background-size: 100% 150%;
+    background-position: center;
+}
+
+.patrol_boatVertical{
+    background-image: url('ships/patrol_boat_vertical.png');
+    background-size: 150% 100%;
+    background-position: center;
+    width: 45px !important;
+}
+
+
+
+.flex-container{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    perspective: 75em;
+    perspective-origin: center 75%;
+}
+
+.flex-container > * {
+    margin: 1em;
+}
+
+#logger{
+    flex-basis: 90%;
+}
+
+#logger{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+#logger > * {
+    margin: 0.5em;
+}
+
+#logger > div{
+    border-radius: 10px;
+    background-color: rgba(170,169,173,0.7);
+    width: 20em;
+    font-weight: bold;
+    text-align: center;
+}
+
+.grid-ships{
+    background-image: url(ocean.gif);
+    background-size: cover;
+    border: 2px solid rgb(128,128,128);
+    border-radius: 10px;
+    height: 495px;
+    width: 495px;
+    transform: rotateX(25deg);
+}
+
+.grid-salvoes{
+    background-image: url(sonar.gif);
+    background-size: 100% 100%;
+    border: 2px solid rgb(127,74,25);
+    border-radius: 10px;
+    height: 495px;
+    width: 495px;
+    transform: rotateX(25deg);
+}
+
+#grid{
+    margin: 45px 0 0 45px;
+    position: absolute;
+    width: 450px;
+ 
+}
+
+.grid-wrapper{
+    display: absolute;
+    display: flex;
+    flex-direction: column;
+}
+
+.grid-row{
+    display: flex;
+    flex-direction: row;
+}
+
+.grid-cell{
+    display: flex;
+    box-sizing: border-box;
+    width: 45px;
+    height: 45px;
+    border-radius: 10px;
+    vertical-align: middle;
+    font-weight: bold;
+    text-align: center;
+    align-items: center;
+    cursor: pointer;
+}
+.grid-cell span{
+    
+    margin: auto
+}
+.grid-ships .grid-cell{
+    border: 1.3px solid rgb(128,128,128);
+}
+
+.grid-salvoes .grid-cell{
+    border: 1.3px solid rgb(127,74,25);
+}
+
+
+.busy-cell{
+    background-color: rgba(0,119,190,0.5);
+    
+}
+
+.grid-ships .grid-row:first-child .grid-cell{
+    background-color: rgba(170,169,173,0.7);
+}
+
+.grid-ships .grid-cell:first-child{
+    background-color: rgba(170,169,173,0.7);
+}
+
+.grid-salvoes .grid-row:first-child .grid-cell{
+    background-color: rgba(184,115,51,0.7);
+}
+
+.grid-salvoes .grid-cell:first-child{
+    background-color: rgba(184,115,51,0.8);
+}
+
+#alert-text{
+    color: red;
+    text-align: center;
+    display: block;
+}
+
+.salvo{
+    background-color: gold;
+}
+
+.ship-down{
+    background-color: red;
+}
+
+.fired{
+background-color: gold;
+background-size: 100% 100%;
+background-position: center; 
+}
+
+.hit{
+    background-color: darkred;
+    background-size: 100% 100%;
+    background-position: center; 
+    z-index: 1000;
+}
+

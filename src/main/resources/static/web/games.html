@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="styles/main.css">
+        <title>Salvo</title>
+    </head>
+    
+    <body>
+        <div id="app">
+        <h1 id="salvo">Salvo!</h1>
+        
+        <form id="login-form" onsubmit="return false" v-if="currentPlayer == 'guest'">
+            <label>Name: <input type="text" id="login-username" name="username"></label>
+            <label>Password: <input type="password" id="login-password" name="password"></label>
+            <input type="submit" value="Sign In" onclick="login()"/>
+        </form>
+
+        <form id="logout-form" onsubmit="return false" v-if="currentPlayer != 'guest'">
+            <input type="submit" value="Log out" onclick="logout(event)"/>
+            <button onclick="createGame()">Create New Game</button>
+        </form>
+            
+        <form id="singup-form" onsubmit="return false" v-if="currentPlayer == 'guest'">  
+            <fieldset>
+                <legend>New Player? Sign up</legend>
+                <label>Name: <input type="text" id="signup-username" name="username"></label>
+                <label>Password: <input type="password" id="signup-password" name="password"></label>
+                <input type="submit" value="Sign Up" onclick="singup()"/>
+            </fieldset>
+        </form>  
+            
+        <div class="flex-container" v-if="currentPlayer != 'guest'">
+		   <table  id="games-table"></table>
+            
+            <ul id="games-table">
+                <li v-for="game in gamesData">Game no {{game.id}}
+                    <ul>
+                        <li v-for="gamePlayer in game.gamePlayers"> {{gamePlayer.player.email}}
+                            <a v-if="gamePlayer.player.id == currentPlayer.id" :href="'/web/game.html?gp='+gamePlayer.id"><input type="submit" value="Enter"/></a>
+                            <a v-if="gamePlayer.player.id != currentPlayer.id && game.gamePlayers.length == 1" href="#" :onclick="'joinGame('+game.id+')'"><input type="submit" value="Join"/></a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            
+    	   <table  id="leaderboard"></table>
+	    </div>
+        
+        
+       </div>
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+       <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+       <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+       <script src="games.js"></script>
+    </body>
+    
+    
+</html>
